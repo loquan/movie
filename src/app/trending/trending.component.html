@@ -1,0 +1,31 @@
+
+<div class="row" style="margin-left:40px;">
+  <div class="col-11" >
+    <H4 style="font-weight: bold;">TRENDING MOVIES</H4>
+  </div>
+  <div class="col-1" style="right:0px">
+    <H4 style="font-weight: bold;">View All</H4>
+  </div>
+</div>
+
+
+<div *ngFor="let movies of TrendingDisplay" class="row" style="margin-left:40px">
+  <div *ngFor="let movie of movies" class="col-2">
+    <div   >
+      <img [src]="movie.image"  width="320" height="420"><br>
+      <div style="font-weight: bold;margin-top:5px;">{{movie.title}}</div>
+    </div>
+
+
+    <div  class="row" style="margin-top:5px;margin-bottom:20px">
+      <div  class="col-11" >
+        <i *ngFor="let color of movie.stars.color" class="fa fa-heart" style="width:25px;font-size:23px;color:{{color}}">
+
+        </i>
+      </div>
+      <div  class="col-1">{{movie.imDbRating}}</div>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,17 @@
+
+<h4 style="font-weight: bold;">Popular Movies</h4>
+<div *ngFor="let movie of PopularDisplay">
+  <div class="row">
+  <div  class="col-5" style="font-weight: bold;height: 60px;">
+    {{movie.title}}
+  </div>
+
+  <div  class="col-5">
+      <i *ngFor="let color of movie.stars.color" class="fa fa-heart" style="width:25px;font-size:20px;color:{{color}}">
+
+      </i>
+  </div>
+  <div  class="col-1">{{movie.imDbRating}}</div>
+
+  </div>
+</div>
