@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import populardata from '../app/json/popular-movies.json';
+import trendingdata from '../app/json/trending-movies.json';
 
 
 export interface ReviewStruct{
@@ -9,7 +11,15 @@ export interface ReviewStruct{
   rating: number
 };
 
+export interface MovieStructor{
 
+  id: number,
+  name: string,
+  cover: string,
+  rating: number,
+  reviews:ReviewStruct[],
+  stars:{color:string[]}
+}
 export interface MovieStruct {
   id: string;
   rank: number;
@@ -39,6 +49,10 @@ export class MovielistService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
+
+  PopularDatas: MovieStructor[] = populardata;
+  TrendingDatas: MovieStructor[] = trendingdata;
+
   PopularData : MovieStruct[]=[{
     id: "tt0303461",
     rank: 26,

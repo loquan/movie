@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MovielistService,MovieStruct } from '../movielist.service';
+import { MovielistService,MovieStructor } from '../movielist.service';
 @Component({
   selector: 'app-popular',
   templateUrl: './popular.component.html',
@@ -7,8 +7,8 @@ import { MovielistService,MovieStruct } from '../movielist.service';
 })
 export class PopularComponent implements OnInit {
 
-  PopularList:MovieStruct[]=[];
-  PopularDisplay:MovieStruct[]=[];
+  PopularList:MovieStructor[]=[];
+  PopularDisplay:MovieStructor[]=[];
   constructor(private _service:MovielistService) { }
 
   ngOnInit(): void {
@@ -18,15 +18,15 @@ export class PopularComponent implements OnInit {
       //this.PopularList=data.items;
 
 
-      this.PopularList  = this._service.PopularData;
+      this.PopularList  = this._service.PopularDatas;
 
       for(let q=0;q<this.PopularList.length;q++){
 
 
 
-        for(let s=0;s<10;s++)
+        for(let s=0;s<5;s++)
         {
-          let rating=this.PopularList[q].imDbRating;
+          let rating=this.PopularList[q].rating;
           if((s+1)<rating)
             this.PopularList[q].stars.color[s]='red';
           else
@@ -38,7 +38,7 @@ export class PopularComponent implements OnInit {
       }
 
 
-      this.PopularDisplay=this.PopularList.slice(0,10);
+      this.PopularDisplay=this.PopularList;
 
 
     //  })

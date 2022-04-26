@@ -3,7 +3,7 @@
 <div *ngFor="let movie of PopularDisplay">
   <div class="row">
   <div  class="col-5" style="font-weight: bold;height: 60px;">
-    {{movie.title}}
+    {{movie.name}}
   </div>
 
   <div  class="col-5">
@@ -11,7 +11,8 @@
 
       </i>
   </div>
-  <div  class="col-1">{{movie.imDbRating}}</div>
+  <div  class="col-1">{{movie.rating}}</div>
+  <div  class="col-1"></div>
 
   </div>
 </div>
