@@ -2,7 +2,7 @@
 <h4 style="font-weight: bold;">Popular Movies</h4>
 <div *ngFor="let movie of PopularDisplay">
   <div class="row">
-  <div  class="col-5" style="font-weight: bold;height: 60px;">
+  <div  class="col-5" style="font-weight: bold;height: 60px;" (click)="selectId(movie.id)">
     {{movie.name}}
   </div>
 

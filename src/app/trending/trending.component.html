@@ -11,14 +11,14 @@
 
 <div *ngFor="let movies of TrendingDisplay" class="row" style="margin-left:40px">
   <div class="col-1"></div>
-  <div *ngFor="let movie of movies" class="col-2">
-    <div   >
+  <div *ngFor="let movie of movies" class="col-2" >
+    <div   (click)="selectId(movie.id)" >
       <img [src]="movie.cover"  width="320" ><br>
       <div style="font-weight: bold;margin-top:5px;">{{movie.name}}</div>
     </div>
 
 
-    <div  class="row" style="margin-top:5px;margin-bottom:20px">
+    <div  class="row" style="margin-top:5px;margin-bottom:20px" >
       <div  class="col-10" >
         <i *ngFor="let color of movie.stars.color" class="fa fa-heart" style="width:50px;font-size:40px;color:{{color}}">
 

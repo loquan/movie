@@ -1,11 +1,21 @@
 
-  <div class="row">
+
+  <div class="row" >
+
     <div class="col-9" >
-      <app-trending ></app-trending>
+      <app-trending
+      [(movie)]="movieShow"
+      (movieId)="movieId"
+      (movieType)="type"
+      ></app-trending>
     </div>
     <div class="col-3" >
 
-      <app-popular></app-popular>
+      <app-popular
+        [(movie)]="movieShow"
+        (movieId)="movieId"
+        (movieType)="type"
+      ></app-popular>
     </div>
   </div>
 

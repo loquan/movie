@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MovielistService,MovieStructor } from '../movielist.service';
+import { Input,Output, EventEmitter  } from '@angular/core';
+import { Router,ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-popular',
   templateUrl: './popular.component.html',
@@ -9,7 +12,14 @@ export class PopularComponent implements OnInit {
 
   PopularList:MovieStructor[]=[];
   PopularDisplay:MovieStructor[]=[];
-  constructor(private _service:MovielistService) { }
+
+  @Input() movie:boolean=false;
+  @Output() movieChange = new EventEmitter<boolean>();
+  @Output() movieId = new EventEmitter<number>();
+  @Output() movieType = new EventEmitter<string>();
+
+  constructor(private _service:MovielistService,private router:Router) { }
+
 
   ngOnInit(): void {
     //this._service.getPopular().subscribe(data=>{
@@ -32,16 +42,18 @@ export class PopularComponent implements OnInit {
           else
             this.PopularList[q].stars.color[s]='black';
         }
-
-
-
       }
 
-
       this.PopularDisplay=this.PopularList;
-
-
     //  })
+  }
+
+  selectId(id:number){
+
+    this.router.navigateByUrl('/movie?type=popular&id='+id);
+    this.movieId.emit(id);
+    this.movieType.emit("popular");
+    this.movieChange.emit(true);
   }
 
 }

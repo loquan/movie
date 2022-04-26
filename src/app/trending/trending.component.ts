@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovielistService,MovieStructor } from '../movielist.service';
-
+import { Input,Output, EventEmitter  } from '@angular/core';
+import { Router,ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-trending',
   templateUrl: './trending.component.html',
@@ -8,10 +9,16 @@ import { MovielistService,MovieStructor } from '../movielist.service';
 })
 export class TrendingComponent implements OnInit {
 
+
+  @Input() movie : boolean=false;
+  @Output() movieChange = new EventEmitter<boolean>();
+  @Output() movieId = new EventEmitter<number>();
+  @Output() movieType = new EventEmitter<string>();
+
   TrendingList:MovieStructor[]=[];
   TrendingDisplay:MovieStructor[][]=[];
   TrendingDisplayAll:MovieStructor[][]=[];
-  constructor(private service:MovielistService) { }
+  constructor(private service:MovielistService,private router:Router) { }
 
   ngOnInit(): void {
     console.log("trending");
@@ -114,5 +121,15 @@ export class TrendingComponent implements OnInit {
 
     //);
   }
+  selectId(id:number){
 
+
+
+
+    this.router.navigateByUrl('/movie?type=trending&id='+id);
+
+    this.movieId.emit(id);
+    this.movieType.emit("trending");
+    this.movieChange.emit(true);
+  }
 }
