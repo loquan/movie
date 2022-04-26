@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MovielistService,MovieStructor } from '../movielist.service';
-import { Input,Output, EventEmitter  } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-trending',
@@ -10,10 +9,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class TrendingComponent implements OnInit {
 
 
-  @Input() movie : boolean=false;
-  @Output() movieChange = new EventEmitter<boolean>();
-  @Output() movieId = new EventEmitter<number>();
-  @Output() movieType = new EventEmitter<string>();
+
 
   TrendingList:MovieStructor[]=[];
   TrendingDisplay:MovieStructor[][]=[];
@@ -78,8 +74,7 @@ export class TrendingComponent implements OnInit {
 
         for(let q=0;q<this.TrendingList.length;q++){
 
-
-
+          this.TrendingList[q].stars={ color:['black','black','black','black','black',]}
           for(let s=0;s<5;s++)
           {
             let rating=this.TrendingList[q].rating;
@@ -90,15 +85,13 @@ export class TrendingComponent implements OnInit {
               this.TrendingList[q].stars.color[s]='black';
           }
 
-
-
         }
 
         if(remainder>0){
           //numberRows++;
         }
 
-        this.TrendingDisplay[0]=this.TrendingList.slice(0,5);
+        this.TrendingDisplay[0]=this.TrendingList.slice(0,6);
         //this.TrendingDisplay[1]=this.TrendingList.slice(5,10);
 
         // for(let x=0;x<numberRows;x++)
@@ -128,8 +121,6 @@ export class TrendingComponent implements OnInit {
 
     this.router.navigateByUrl('/movie?type=trending&id='+id);
 
-    this.movieId.emit(id);
-    this.movieType.emit("trending");
-    this.movieChange.emit(true);
+
   }
 }

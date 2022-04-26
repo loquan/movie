@@ -1,5 +1,6 @@
 import { Component, OnInit,OnChanges } from '@angular/core';
-import { MovielistService,MovieStruct } from '../movielist.service';
+import { MovielistService } from '../movielist.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

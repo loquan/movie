@@ -2,17 +2,18 @@
 <h4 style="font-weight: bold;">Popular Movies</h4>
 <div *ngFor="let movie of PopularDisplay">
   <div class="row">
-  <div  class="col-5" style="font-weight: bold;height: 60px;" (click)="selectId(movie.id)">
-    {{movie.name}}
-  </div>
 
-  <div  class="col-5">
-      <i *ngFor="let color of movie.stars.color" class="fa fa-heart" style="width:25px;font-size:20px;color:{{color}}">
+    <div  class="col-5" style="font-weight: bold;height: 60px;" (click)="selectId(movie.id)">
+      {{movie.name}}
+    </div>
 
-      </i>
-  </div>
-  <div  class="col-1">{{movie.rating}}</div>
-  <div  class="col-1"></div>
+    <div  class="col-5">
+        <i *ngFor="let color of movie.stars.color" class="fa fa-heart" style="width:25px;font-size:20px;color:{{color}}" (click)="selectId(movie.id)">
+
+        </i>
+    </div>
+    <div  class="col-1" (click)="selectId(movie.id)">{{movie.rating}}</div>
+    <div  class="col-1"></div>
 
   </div>
 </div>

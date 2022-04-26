@@ -1,17 +1,81 @@
-<p>movie works!</p>
 
-<div   >
-  <img [src]="MovieData.cover"  width="320" ><br>
-  <div style="font-weight: bold;margin-top:5px;">{{MovieData.name}}</div>
+<div  class="container-fluid">
+<div  class="row">
+
+<div   class="col-1">
+</div>
+<div   class="col-2">
+  <div class="row">
+    <img [src]="MovieData.cover"  width="320" >
+  </div>
+  <div class="row" style="font-weight: bold;margin-top:5px;margin-left:4px;">{{MovieData.name}}</div>
+  <div  class="row" style="margin-top:5px;margin-bottom:20px">
+    <div  class="col-10" >
+      <i *ngFor="let color of MovieData.stars.color" class="fa fa-heart" style="width:50px;font-size:40px;color:{{color}}">
+      </i>
+    </div>
+    <div  class="col-1" > {{MovieData.rating}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div  class="col-10" >
+      <div *ngFor="let review of MovieData.reviews" style="margin-bottom:10px">
+          <div class="row">
+            <div  class="col-2" >
+             <div style="font-weight:bold;">Author:</div>
+
+            </div>
+            <div  class="col-6" >
+              {{review.author}}
+            </div>
+            <div  class="col-4" *ngIf="review.stars">
+              <i *ngFor="let color of review.stars.color" class="fa fa-heart" style="width:20px;font-size:18px;color:{{color}}">
+              </i>
+            </div>
+
+          </div>
+          <div class="row">
+            <div  class="col-2" style="font-weight:bold;">Review:</div>&nbsp;{{review.review}}
+          </div>
+
+
+      </div>
+    </div>
+
+
+  </div>
 </div>
 
+<div   class="col-1">
+</div>
 
-<div  class="row" style="margin-top:5px;margin-bottom:20px">
+<!-- Review movie input -->
+<div   class="col-5">
+  <div  class="row">Rate this movie</div>
+  <div  class="row"><label style="font:bold;">Name</label></div>
+  <div  class="row"><input  type="text" [(ngModel)]="name" class="form-control"></div>
+  <div  class="row"><label style="font:bold;">Rating</label></div>
+ <div  class="row" style="margin-top:5px;margin-bottom:20px">
   <div  class="col-10" >
-    <i *ngFor="let color of MovieData.stars.color" class="fa fa-heart" style="width:50px;font-size:40px;color:{{color}}">
+    <i *ngFor="let color of colors; let i = index " class="fa fa-heart" style="width:50px;font-size:40px;color:{{color}}" (click)="rating(i)">
 
     </i>
   </div>
-  <div  class="col-1">{{MovieData.rating}}</div>
+
   <div  class="col-1"></div>
+</div>
+<div  class="row"><label style="font:bold;" >Review</label></div>
+  <div  class="row">
+    <textarea  rows="10" class="form-control" [(ngModel)]="reviewData" placeholder="Please write customer notes" ></textarea>
+  </div>
+
+<div  class="row">
+  <button class="btn btn-primary mb-3" (click)="saveData()">Submit</button>
+</div>
+<div  class="row">
+  <button class="btn btn-primary mb-3" (click)="close()">Close</button>
+</div>
+
+</div>
 </div>

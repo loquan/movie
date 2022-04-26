@@ -15,6 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MovielistService } from './movielist.service';
 import { HttpClientModule } from '@angular/common/http';
+import { TheaterComponent } from './theater/theater.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     TrendingComponent,
     PopularComponent,
     MovieComponent,
+    TheaterComponent,
 
   ],
   imports: [
@@ -33,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [MovielistService],
   bootstrap: [AppComponent]

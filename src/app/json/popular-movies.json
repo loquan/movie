@@ -9,13 +9,15 @@
         "author": "John Kramer",
         "published_on": "2021-11-18 11:37:19",
         "review": "Awesome movie!",
-        "rating": 4.5
+        "rating": 4.5,
+        "stars":{"color":["black","black","black","black","black"]}
       },
       {
         "author": "Harry Potter",
         "published_on": "2021-10-13 10:16:39",
         "review": "Nice movie to watch in theatre!",
-        "rating": 4.0
+        "rating": 4.0,
+        "stars":{"color":["black","black","black","black","black"]}
       }
     ],
     "stars":{"color":["black","black","black","black","black"]}
@@ -39,7 +41,8 @@
         "author": "Ron Weasley",
         "published_on": "2021-10-11 11:57:39",
         "review": "Good but confusing",
-        "rating": 4.0
+        "rating": 4.0,
+        "stars":{"color":["black","black","black","black","black"]}
       }
     ],
     "stars":{"color":["black","black","black","black","black"]}
@@ -54,13 +57,15 @@
         "author": "John Kramer",
         "published_on": "2020-10-23 11:27:39",
         "review": "Awesome movie!",
-        "rating": 4.5
+        "rating": 4.5,
+        "stars":{"color":["black","black","black","black","black"]}
       },
       {
         "author": "Hermione Granger",
         "published_on": "2021-10-11 11:27:39",
         "review": "Very good movie to watch!",
-        "rating": 4.0
+        "rating": 4.0,
+        "stars":{"color":["black","black","black","black","black"]}
       }
     ],
     "stars":{"color":["black","black","black","black","black"]}
@@ -75,7 +80,8 @@
         "author": "Peter Pettigrew",
         "published_on": "2020-10-13 11:27:39",
         "review": "Nice graphics!",
-        "rating": 4.5
+        "rating": 4.5,
+        "stars":{"color":["black","black","black","black","black"]}
       }
     ],
     "stars":{"color":["black","black","black","black","black"]}
@@ -90,7 +96,8 @@
         "author": "Sirius Black",
         "published_on": "2021-10-13 11:37:29",
         "review": "Lengthy movie",
-        "rating": 3.5
+        "rating": 3.5,
+        "stars":{"color":["black","black","black","black","black"]}
       }
     ],
     "stars":{"color":["black","black","black","black","black"]}
@@ -132,7 +139,8 @@
         "author": "Lilly Potter",
         "published_on": "2021-10-10 11:27:39",
         "review": "Awesome movie!",
-        "rating": 4.5
+        "rating": 4.5,
+        "stars":{"color":["black","black","black","black","black"]}
       }
     ],
     "stars":{"color":["black","black","black","black","black"]}
