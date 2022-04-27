@@ -4,7 +4,7 @@
 <body>
 
 
-<div class="large" style="margin-top:70px;margin-right:40px;text-align: right; "> MOVIE REVIEW</div>
+<div class="large" style="margin-right:40px;text-align: right; "> MOVIE REVIEW</div>
 
 <div style="margin-top:80px;margin-right:40px">
 
@@ -33,20 +33,30 @@
 <div class="container-fluid " style="margin:20px;background-color: white;padding: 10px;
 box-shadow: 4px 4px #888888;border: 1px solid black; width:400px; position: absolute;bottom: 8px;right: 16px;" >
 
-   <form >
 
-     <div class="form-group mt-3 mb-3">
+
+
       <label style="font:bold;">User Name</label>
-      <input  type="email" class="form-control">
-    </div>
+      <input  type="email" [(ngModel)]="loginname" class="form-control">
+
+
 
     <div class="form-group mb-3">
       <label style="font:bold" >Password</label>
-      <input type="password"   class="form-control">
+      <input type="password" [(ngModel)]="password"  class="form-control">
+
     </div>
 
-    <button class="btn btn-dark mb-3" (click)="login()">Login</button>
-   </form>
+    <div class="row">
+      <div class="col-6">
+        <button class="btn btn-dark mb-3" (click)="login()">Login</button>
+      </div>
+      <div class="col-6">
+        <div *ngIf="LoginFailed" style="color:red;">Password Required</div>
+      </div>
+    </div>
+
+
 
 
 </div>

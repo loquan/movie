@@ -7,14 +7,23 @@ import { MovielistService } from '../movielist.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  LoginFailed:boolean=false;
+  password:string="";
+  loginname:string="";
   constructor(private service:MovielistService,private router:Router) { }
 
   ngOnInit(): void {
   }
   login(){
-    this.service.loginObject.login=true;
-    this.router.navigateByUrl("/home");
+
+    if(this.password.length==0)
+      this.LoginFailed=true;
+    else
+    {
+      this.LoginFailed=false;
+      this.service.loginObject.login=true;
+      this.router.navigateByUrl("/home");
+    }
   }
 
 }
