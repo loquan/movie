@@ -23,7 +23,9 @@ export interface MovieStructor{
   stars:{color:string[]}
 }
 
-
+export interface loginObject{
+  login:boolean;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -35,10 +37,11 @@ export class MovielistService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
+
   PopularDatas: MovieStructor[] = populardata;
   TrendingDatas: MovieStructor[] = trendingdata;
   TheaterDatas: MovieStructor[] = theaterdata;
-
+  loginObject:loginObject={login:false};
 
 
 
