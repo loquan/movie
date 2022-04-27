@@ -132,7 +132,7 @@ export class MovieComponent implements OnInit, OnChanges {
 
   rating(index:number){
 
-    this.review.rating=index+1;
+
     this.ratingValue=index+1;
     for(let s=0;s<5;s++)
     {
