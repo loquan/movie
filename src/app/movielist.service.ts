@@ -20,7 +20,10 @@ export interface MovieStructor{
   cover: string,
   rating: number,
   reviews:ReviewStruct[],
-  stars:{color:string[]}
+  stars:{color:string[]
+
+  },
+
 }
 
 export interface loginObject{

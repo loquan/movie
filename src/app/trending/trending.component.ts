@@ -38,7 +38,7 @@ export class TrendingComponent implements OnInit {
         //     if((s+1)<rating)
         //       this.TrendingList[q].stars.color[s]='red';
         //     else
-        //       this.TrendingList[q].stars.color[s]='black';
+        //       this.TrendingList[q].stars.color[s]='white';
         //   }
 
 
@@ -74,15 +74,22 @@ export class TrendingComponent implements OnInit {
 
         for(let q=0;q<this.TrendingList.length;q++){
 
-          this.TrendingList[q].stars={ color:['black','black','black','black','black',]}
+          this.TrendingList[q].stars={ color:['white','white','white','white','white',]}
           for(let s=0;s<5;s++)
           {
             let rating=this.TrendingList[q].rating;
 
             if((s+1)<rating)
+            {
+
+
               this.TrendingList[q].stars.color[s]='red';
+            }
             else
-              this.TrendingList[q].stars.color[s]='black';
+            {
+
+              this.TrendingList[q].stars.color[s]='white';
+            }
           }
 
         }

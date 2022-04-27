@@ -20,9 +20,20 @@
 
     <div  class="row" style="margin-top:5px;margin-bottom:20px" >
       <div  class="col-8" >
-        <i *ngFor="let color of movie.stars.color" class="fa fa-heart" style="width:30px;font-size:25px;color:{{color}}">
 
-        </i>
+        <!-- <i *ngFor="let color of movie.stars.color;let i = index" class="fa fa-heart" style="width:30px;font-size:25px;color:{{color}}">
+
+        </i> -->
+
+        <i *ngFor="let color of movie.stars.color;let i = index" style="width:5px" >
+
+            <span *ngIf="(movie.rating-i) > 0 && (movie.rating-i) < 1; else fullColor"  class='bi bi-heart-half' style="width:40px;font-size:35px;color:red"></span>
+
+            <ng-template #fullColor>
+                <span class="bi bi-heart-fill" style="width:40px;font-size:35px;color:{{color}}"></span>
+            </ng-template>
+          </i>
+
       </div>
       <div  class="col-1" style="font-weight: bold;margin-top:5px;">{{movie.rating}}</div>
       <div  class="col-2"></div>
