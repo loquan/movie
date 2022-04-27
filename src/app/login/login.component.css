@@ -1,9 +1,8 @@
-body {
-  background-image: url("../../assets/Background3.png")  ;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
+ body {
+  background-image: url("../../assets/film.png")  ;
+  background-color: yellow ;
+  background-repeat: no-repeat;
+  background-size: 800px auto;
 }
+
 

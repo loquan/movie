@@ -6,12 +6,26 @@
 </div>
 <div   class="col-2">
   <div class="row">
-    <img [src]="MovieData.cover"  width="320" >
+    <img [src]="MovieData.cover"  width="200" >
   </div>
   <div class="row" style="font-weight: bold;margin-top:5px;margin-left:4px;">{{MovieData.name}}</div>
   <div  class="row" style="margin-top:5px;margin-bottom:20px">
     <div  class="col-10" >
-      <i *ngFor="let color of MovieData.stars.color" class="fa fa-heart" style="width:50px;font-size:40px;color:{{color}}">
+      <!-- <i *ngFor="let color of MovieData.stars.color" class="fa fa-heart" style="width:50px;font-size:40px;color:{{color}}">
+      </i> -->
+
+      <i *ngFor="let  number of [0,1,2,3,4];let i = index" style="width:5px" >
+
+        <span *ngIf="(MovieData.rating-i) > 0 && (MovieData.rating-i) < 1; else fullColor"  class='bi bi-heart-half' style="width:30px;font-size:25px;color:red"></span>
+
+        <ng-template #fullColor>
+            <span *ngIf="i < MovieData.rating ; else endColor " class="bi bi-heart-fill" style="width:30px;font-size:25px;color:red"></span>
+
+            <ng-template #endColor>
+              <span class="bi bi-heart" style="width:30px;font-size:25px;color:red"></span>
+           </ng-template>
+        </ng-template>
+
       </i>
     </div>
     <div  class="col-1" > {{MovieData.rating}}
@@ -21,22 +35,43 @@
   <div class="row">
     <div  class="col-10" >
       <div *ngFor="let review of MovieData.reviews" style="margin-bottom:10px">
+
+        <div class="row">
+        <div  class="col-12" *ngIf="review.stars">
+
+          <i *ngFor="let  number of [0,1,2,3,4];let i = index" style="width:5px" >
+
+            <span *ngIf="(review.rating-i) > 0 && (review.rating-i) < 1; else fullColor2"  class='bi bi-heart-half' style="width:12px;font-size:8px;color:red"></span>
+
+            <ng-template #fullColor2>
+                <span *ngIf="i < review.rating ; else endColor2 " class="bi bi-heart-fill" style="width:12px;font-size:8px;color:red"></span>
+
+                <ng-template #endColor2>
+                  <span class="bi bi-heart" style="width:12px;font-size:8px;color:red"></span>
+               </ng-template>
+            </ng-template>
+
+          </i>
+          {{review.rating}}
+          <!-- <i *ngFor="let color of review.stars.color" class="fa fa-heart" style="width:20px;font-size:18px;color:{{color}}">
+          </i> -->
+        </div>
+        </div>
           <div class="row">
-            <div  class="col-2" >
+            <div  class="col-3" >
              <div style="font-weight:bold;">Author:</div>
 
             </div>
-            <div  class="col-6" >
+            <div  class="col-8" >
               {{review.author}}
             </div>
-            <div  class="col-4" *ngIf="review.stars">
-              <i *ngFor="let color of review.stars.color" class="fa fa-heart" style="width:20px;font-size:18px;color:{{color}}">
-              </i>
-            </div>
+
 
           </div>
           <div class="row">
-            <div  class="col-2" style="font-weight:bold;">Review:</div>&nbsp;{{review.review}}
+            <div  class="col-3" style="font-weight:bold;">Review:</div>
+            <div  class="col-9">{{review.review}}</div>
+
           </div>
 
 
@@ -58,7 +93,7 @@
   <div  class="row"><label style="font:bold;">Rating</label></div>
  <div  class="row" style="margin-top:5px;margin-bottom:20px">
   <div  class="col-10" >
-    <i *ngFor="let color of colors; let i = index " class="fa fa-heart" style="width:50px;font-size:40px;color:{{color}}" (click)="rating(i)">
+    <i *ngFor="let colorclass of colorsClass; let i = index " class="{{colorclass}}" style="width:50px;font-size:40px;color:red" (click)="rating(i)">
 
     </i>
   </div>

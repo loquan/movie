@@ -42,7 +42,7 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color:rgb(95, 83.5, 34.9) ;
+    background-color:yellow  ;
     color: white;
     font-weight: 600;
   }
@@ -305,9 +305,9 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
 
-  <span style="margin-left:20px">Movie Review</span>
+  <span style="margin-left:20px" class="small">Movie Review</span>
     <div class="spacer"></div>
-    <h4 *ngIf="logoutMenu.login" style="margin-right:20px"><i class="fa fa-bars" (click)="logout()">&nbsp;Logout</i></h4>
+    <h4 *ngIf="logoutMenu.login" style="margin-right:20px" ><div class="small" (click)="logout()">Logout</div></h4>
 
 
 </div>

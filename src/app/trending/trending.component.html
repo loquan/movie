@@ -13,7 +13,7 @@
 
   <div *ngFor="let movie of movies" class="col-2" >
     <button   (click)="selectId(movie.id)" >
-      <img [src]="movie.cover"  width="260" ><br>
+      <img [src]="movie.cover"  width="180" ><br>
       <div style="font-weight: bold;margin-top:5px;">{{movie.name}}</div>
     </button>
 
@@ -27,13 +27,13 @@
 
         <i *ngFor="let color of movie.stars.color;let i = index" style="width:5px" >
 
-            <span *ngIf="(movie.rating-i) > 0 && (movie.rating-i) < 1; else fullColor"  class='bi bi-heart-half' style="width:40px;font-size:35px;color:red"></span>
+            <span *ngIf="(movie.rating-i) > 0 && (movie.rating-i) < 1; else fullColor"  class='bi bi-heart-half' style="width:30px;font-size:25px;color:red"></span>
 
             <ng-template #fullColor>
-                <span *ngIf="i < movie.rating ; else endColor " class="bi bi-heart-fill" style="width:40px;font-size:35px;color:{{color}}"></span>
+                <span *ngIf="i < movie.rating ; else endColor " class="bi bi-heart-fill" style="width:30px;font-size:25px;color:red"></span>
 
                 <ng-template #endColor>
-                  <span class="bi bi-heart" style="width:40px;font-size:35px;color:red"></span>
+                  <span class="bi bi-heart" style="width:30px;font-size:25px;color:red"></span>
                </ng-template>
             </ng-template>
 

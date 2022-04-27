@@ -11,7 +11,20 @@
 
 
 
-        <i *ngFor="let color of movie.stars.color" class="fa fa-heart" style="width:25px;font-size:20px;color:{{color}}" (click)="selectId(movie.id)">
+        <!-- <i *ngFor="let color of movie.stars.color" class="fa fa-heart" style="width:25px;font-size:20px;color:{{color}}" (click)="selectId(movie.id)">
+
+        </i> -->
+        <i *ngFor="let number of [0,1,2,3,4];let i = index" style="width:5px" >
+
+          <span *ngIf="(movie.rating-i) > 0 && (movie.rating-i) < 1; else fullColor"  class='bi bi-heart-half' style="width:40px;font-size:35px;color:red"></span>
+
+          <ng-template #fullColor>
+              <span *ngIf="i < movie.rating ; else endColor " class="bi bi-heart-fill" style="width:40px;font-size:35px;color:red"></span>
+
+              <ng-template #endColor>
+                <span class="bi bi-heart" style="width:40px;font-size:35px;color:red"></span>
+             </ng-template>
+          </ng-template>
 
         </i>
     </div>

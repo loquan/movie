@@ -24,7 +24,7 @@ export class MovieComponent implements OnInit, OnChanges {
 
   reviewData:string="";
   name:string="";
-  colors:string[]=['black','black','black','black','black'];
+  colorsClass:string[]=['bi bi-heart','bi bi-heart','bi bi-heart','bi bi-heart','bi bi-heart',];
   ratingValue:number=0;
 
   MovieData:MovieStructor={  id: 0,
@@ -137,9 +137,9 @@ export class MovieComponent implements OnInit, OnChanges {
     for(let s=0;s<5;s++)
     {
       if((s)<=index)
-       this.colors[s]='red';
+       this.colorsClass[s]='bi bi-heart-fill';
       else
-        this.colors[s]='black';
+        this.colorsClass[s]='bi bi-heart';
     }
 
   }

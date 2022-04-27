@@ -2,3 +2,19 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+  font-family: fontName;
+  src: url('/assets/Creepster-Regular.ttf');
+}
+
+.small {
+  font-family: fontName;
+  font-size:20px;
+  color: black;
+}
+
+.large {
+  font-family: fontName;
+  font-size:40px;
+  color: black;
+}
