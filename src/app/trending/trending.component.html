@@ -30,8 +30,13 @@
             <span *ngIf="(movie.rating-i) > 0 && (movie.rating-i) < 1; else fullColor"  class='bi bi-heart-half' style="width:40px;font-size:35px;color:red"></span>
 
             <ng-template #fullColor>
-                <span class="bi bi-heart-fill" style="width:40px;font-size:35px;color:{{color}}"></span>
+                <span *ngIf="i < movie.rating ; else endColor " class="bi bi-heart-fill" style="width:40px;font-size:35px;color:{{color}}"></span>
+
+                <ng-template #endColor>
+                  <span class="bi bi-heart" style="width:40px;font-size:35px;color:red"></span>
+               </ng-template>
             </ng-template>
+
           </i>
 
       </div>
