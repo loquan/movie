@@ -5,4 +5,7 @@
   background-size: 800px auto;
 }
 
-
+.shadow{
+  box-shadow: 4px 4px #888888;
+  border: 1px solid black;
+}
